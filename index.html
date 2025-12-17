@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweet Bliss Bakery</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- HEADER + NAVBAR -->
+    <header>
+        <h1 class="logo">🍰 Sweet Bliss Bakery</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cost">Cost Calculator</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+        <button id="themeToggle">🌙</button>
+    </header>
+ 
+    <!-- HOME SECTION -->
+    <section id="home" class="section">
+        <h2>Welcome to Sweet Bliss Bakery</h2>
+        <p>Fresh. Delicious. Made with love. Explore our sweet delights!</p>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="section">
+        <h2>Our Sweet Products</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="images/ChocalateCake.png" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <p>₹120</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Cupcake.png" alt="Cupcake">
+                <h3>Chocolate Cupcake</h3>
+                <p>₹30</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Donut.png" alt="Donut">
+                <h3>Donut</h3>
+                <p>₹40</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Bread.png" alt="Bread">
+                <h3>Fresh Bread</h3>
+                <p>₹30</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Cookies.png" alt="Cookies">
+                <h3>Cookies</h3>
+                <p>₹80</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Pastry.png" alt="Pastry">
+                <h3>Chocalate Pastry</h3>
+                <p>₹90</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Brownie.png" alt="Brownie">
+                <h3>Brownie</h3>
+                <p>₹70</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Muffin.png" alt="Muffin">
+                <h3> Muffin</h3>
+                <p>₹50</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COST CALCULATOR -->
+    <section id="cost" class="section">
+        <h2>Cost Calculator</h2>
+
+        <label>Select Item:</label>
+        <select id="itemSelect">
+            <option value="250">Chocolate Cake - ₹250</option>
+            <option value="60">Cupcake - ₹60</option>
+            <option value="40">Donut - ₹40</option>
+            <option value="30">Bread - ₹30</option>
+            <option value="80">Cookies - ₹80</option>
+            <option value="90">Pastry - ₹90</option>
+            <option value="70">Brownie - ₹70</option>
+            <option value="50">Muffin - ₹50</option>
+        </select>
+
+        <label>Quantity:</label>
+        <input type="number" id="quantity" min="1" value="1">
+
+        <button onclick="calculateTotal()">Calculate</button>
+
+        <h3 id="totalAmount">Total Amount: ₹0</h3>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+
+        <p><b>📍 Address:</b> MG Road, Bangalore</p>
+        <p><b>📞 Phone:</b> 9876543210</p>
+        <p><b>✉ Email:</b> sweetbliss@gmail.com</p>
+
+    
+    </section>
+
+ 
+    <!-- FEEDBACK SECTION -->
+<section id="feedback" class="section">
+    <h2>Feedback</h2>
+
+    <form id="feedbackForm" onsubmit="return validateFeedback()" class="compact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="feedbackMsg"></p>
+</section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

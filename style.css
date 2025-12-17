@@ -1,0 +1,118 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: #fff;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* DARK MODE */
+.dark {
+    background: #222;
+    color: #eee;
+}
+
+/* HEADER */
+header {
+    background: #ff7eb3;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header #themeToggle {
+    background: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* SECTION */
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* PRODUCT GRID */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background: #ffe6f0;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.product-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* FORM */
+form input,
+form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 8px;
+}
+
+form button {
+    padding: 10px 20px;
+    background: hotpink;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+/* COMPACT FEEDBACK FORM */
+.compact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.compact-form input,
+.compact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.compact-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background: #ff5c8d;
+    color: #fff;
+}
