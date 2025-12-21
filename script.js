@@ -1,35 +1,80 @@
-// DARK MODE
-document.getElementById("themeToggle").onclick = function () {
-    document.body.classList.toggle("dark");
+/* ================= DARK MODE ================= */
+document.addEventListener("DOMContentLoaded", () => {
 
-    this.textContent = document.body.classList.contains("dark") ? "☀" : "🌙";
-};
+    const themeBtn = document.getElementById("themeToggle");
 
-// COST CALCULATION
+    themeBtn.onclick = function () {
+        document.body.classList.toggle("dark");
+        this.textContent = document.body.classList.contains("dark") ? "☀" : "🌙";
+    };
+
+});
+
+
+/* ================= COST CALCULATOR ================= */
 function calculateTotal() {
-    let price = parseInt(document.getElementById("itemSelect").value);
-    let qty = parseInt(document.getElementById("quantity").value);
+    let total = 0;
+
+    const rows = document.querySelectorAll(".bill-row");
+
+    rows.forEach(row => {
+        const checkbox = row.querySelector("input[type='checkbox']");
+        const qtyInput = row.querySelector("input[type='number']");
+
+        const price = parseInt(checkbox.dataset.price); // FIX
+        const qty = parseInt(qtyInput.value);           // FIX
+
+        if (checkbox.checked) {
+            total += price * qty;
+        }
+    });
 
     document.getElementById("totalAmount").innerText =
-        "Total Amount: ₹" + (price * qty);
+        "Total Amount: ₹" + total;
 }
 
-// FEEDBACK VALIDATION
+
+
+
+/* ================= FEEDBACK VALIDATION ================= */
 function validateFeedback() {
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
-    let msg = document.getElementById("message").value.trim();
+    let message = document.getElementById("message").value.trim();
 
-    if (name === "" || email === "" || msg === "") {
-        document.getElementById("feedbackMsg").innerText =
-            "❌ All fields are required!";
-        document.getElementById("feedbackMsg").style.color = "red";
+    let feedbackMsg = document.getElementById("feedbackMsg");
+
+    if (name === "" || email === "" || message === "") {
+        feedbackMsg.innerText = "❌ All fields are required!";
+        feedbackMsg.style.color = "red";
         return false;
     }
 
-    document.getElementById("feedbackMsg").innerText =
-        "✔ Thank you for your feedback!";
-    document.getElementById("feedbackMsg").style.color = "green";
+    // Create feedback text
+    let text = "📝 Sweet Bliss Bakery - Feedback\n";
+    text += "---------------------------------\n";
+    text += `Name: ${name}\n`;
+    text += `Email: ${email}\n`;
+    text += `Message:\n${message}\n`;
+    text += "---------------------------------\n";
+    text += `Date: ${new Date().toLocaleString()}\n`;
 
-    return false; // prevent actual form submission
+    // Create Notepad file
+    const blob = new Blob([text], { type: "text/plain" });
+    const link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+    link.download = "SweetBliss_Feedback.txt";
+
+    link.click();
+    URL.revokeObjectURL(link.href);
+
+    // Success message
+    feedbackMsg.innerText = "✔ Feedback saved successfully!";
+    feedbackMsg.style.color = "green";
+
+    // Clear form
+    document.getElementById("feedbackForm").reset();
+
+    return false; // prevent page refresh
 }
