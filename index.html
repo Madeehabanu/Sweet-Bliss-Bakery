@@ -88,29 +88,83 @@
     </section>
 
     <!-- COST CALCULATOR -->
+   <!-- COST CALCULATOR -->
+
     <section id="cost" class="section">
-        <h2>Cost Calculator</h2>
+         <h2>Cost Calculator</h2>
 
-        <label>Select Item:</label>
-        <select id="itemSelect">
-            <option value="250">Chocolate Cake - ₹250</option>
-            <option value="60">Cupcake - ₹60</option>
-            <option value="40">Donut - ₹40</option>
-            <option value="30">Bread - ₹30</option>
-            <option value="80">Cookies - ₹80</option>
-            <option value="90">Pastry - ₹90</option>
-            <option value="70">Brownie - ₹70</option>
-            <option value="50">Muffin - ₹50</option>
-        </select>
+    <div class="bill-table">
 
-        <label>Quantity:</label>
-        <input type="number" id="quantity" min="1" value="1">
+        <!-- HEADER -->
+        <div class="bill-header">
+            <span></span>
+            <span>Item</span>
+            <span>Price</span>
+            <span>Qty</span>
+        </div>
 
-        <button onclick="calculateTotal()">Calculate</button>
+        <!-- ROWS -->
+        <div class="bill-row">
+            <input type="checkbox" data-price="120">
+            <span>Chocolate Cake</span>
+            <span>₹120</span>
+            <input type="number" value="2" min="1">
+        </div>
 
-        <h3 id="totalAmount">Total Amount: ₹0</h3>
-    </section>
+        <div class="bill-row">
+            <input type="checkbox" data-price="30">
+            <span>Chocolate Cupcake</span>
+            <span>₹30</span>
+            <input type="number" value="1" min="1">
+        </div>
 
+        <div class="bill-row">
+            <input type="checkbox" data-price="40">
+            <span>Donut</span>
+            <span>₹40</span>
+            <input type="number" value="1" min="1">
+        </div>
+
+        <div class="bill-row">
+            <input type="checkbox" data-price="30">
+            <span>Fresh Bread</span>
+            <span>₹30</span>
+            <input type="number" value="1" min="1">
+        </div>
+
+        <div class="bill-row">
+            <input type="checkbox" data-price="80">
+            <span>Cookies</span>
+            <span>₹80</span>
+            <input type="number" value="1" min="1">
+        </div>
+
+        <div class="bill-row">
+            <input type="checkbox" data-price="90">
+            <span>Chocolate Pastry</span>
+            <span>₹90</span>
+            <input type="number" value="1" min="1">
+        </div>
+
+        <div class="bill-row">
+            <input type="checkbox" data-price="70">
+            <span>Brownie</span>
+            <span>₹70</span>
+            <input type="number" value="1" min="1">
+        </div>
+
+        <div class="bill-row">
+            <input type="checkbox" data-price="50">
+            <span>Muffin</span>
+            <span>₹50</span>
+            <input type="number" value="1" min="1">
+        </div>
+
+    </div>
+
+    <button onclick="calculateTotal()" class="calc-btn">Calculate</button>
+    <h3 id="totalAmount">Total Amount: ₹0</h3>
+</section>
     <!-- CONTACT SECTION -->
     <section id="contact" class="section">
         <h2>Contact Us</h2>
