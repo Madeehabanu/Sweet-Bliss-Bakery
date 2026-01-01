@@ -61,7 +61,6 @@ header ul {
     display: flex;
     gap: 20px;
 }
-
 header ul li a {
     color: white;
     text-decoration: none;
@@ -70,6 +69,8 @@ header ul li a {
     border-radius: 20px;
     transition: 0.3s;
 }
+
+
 
 /* ACTIVE NAV LINK */
 header ul li a.active {
